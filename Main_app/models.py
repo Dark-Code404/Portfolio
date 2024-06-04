@@ -13,7 +13,7 @@ class About(models.Model):
     Website = models.CharField(max_length=200,blank=True)
     Age=models.IntegerField(default=0)
     myDiscription = models.TextField()
-    Image=models.ImageField(upload_to='images',)
+    
 
 
 
@@ -44,16 +44,6 @@ class Mycontact(models.Model):
           return self.Location
 
 
-
-
-
-
-class Resume(models.Model):
-    fileName = models.CharField(max_length=200)
-    file = models.FileField(upload_to='resumes/', validators=[FileExtensionValidator(allowed_extensions=['pdf'])])
-
-    def __str__(self):
-        return self.fileName
 
 
 
