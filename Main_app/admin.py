@@ -11,14 +11,13 @@ class about(admin.ModelAdmin):
 
 admin.site.register(About,about)
 admin.site.register(Othercontact,about)
-admin.site.register(Mycontact,)
-admin.site.register(Resume,)
-admin.site.register(ResumeAbout,)
-admin.site.register(ResumeTechnical,)
-admin.site.register(ResumeSoft,)
-admin.site.register(ResumeEducation,)
-admin.site.register(ResumeCerti,)
-admin.site.register(Language,)
-admin.site.register(Skills,)
+admin.site.register(Mycontact,about)
+admin.site.register(ResumeAbout,about)
+admin.site.register(ResumeTechnical,about)
+admin.site.register(ResumeSoft,about)
+admin.site.register(ResumeEducation,about)
+admin.site.register(ResumeCerti,about)
+admin.site.register(Language,about)
+admin.site.register(Skills,about)
 
 
