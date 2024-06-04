@@ -33,14 +33,13 @@ def home(request):
 
     about=About.objects.all()
     mycontact=Mycontact.objects.all()
-    resume = Resume.objects.first()
-    resume_url = resume.file.url if resume else None
+    
     resume_about=ResumeAbout.objects.first()
     skills=Skills.objects.all()
     edu=ResumeEducation.objects.all()
     techskill=ResumeTechnical.objects.all()
     softskill=ResumeSoft.objects.all()
-    lists={'about':about,'myc':mycontact, 'resume_url': resume_url,'res':resume_about,
+    lists={'about':about,'myc':mycontact,'res':resume_about,
             'skills':skills,'edu':edu,'tsk':techskill,'ssk':softskill}
 
     return render(request,'index.html',lists)
