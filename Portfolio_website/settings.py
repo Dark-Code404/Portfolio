@@ -71,14 +71,16 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
             ],
 
-         'loaders': [
+              'loaders': [
+            ('django.template.loaders.cached.Loader', [
                 'django.template.loaders.filesystem.Loader',
                 'django.template.loaders.app_directories.Loader',
                 
-            ],
+            ]),
+        ],
         },
     },
-]
+] 
 
 WSGI_APPLICATION = 'Portfolio_website.wsgi.application'
 
