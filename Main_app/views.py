@@ -43,11 +43,3 @@ def home(request):
             'skills':skills,'edu':edu,'tsk':techskill,'ssk':softskill}
 
     return render(request,'index.html',lists)
-
-
-
-
-
-
-        
-
