@@ -6,7 +6,6 @@ click==8.1.7
 dj-database-url==2.2.0
 Django==5.0.6
 django-appconf==1.0.6
-django-compressor==4.4
 gunicorn==22.0.0
 h11==0.14.0
 idna==3.7
