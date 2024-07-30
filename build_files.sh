@@ -7,7 +7,7 @@ python3.9 -m ensurepip
 python3.9 -m pip install -r requirements.txt
 
 # Convert static asset files
-python3.9 manage.py collectstatic --no-input
+python3.9 manage.py collectstatic
 
 python3.9 manage.py makemigrations
 

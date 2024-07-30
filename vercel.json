@@ -13,7 +13,7 @@
           "distDir": "staticfiles_build"
         }
       }
-    ],
+    ],  
     "routes": [
       {
         "src": "/static/(.*)",
