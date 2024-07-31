@@ -10,7 +10,6 @@ class About(models.Model):
     Address = models.CharField(max_length=200)
     Email = models.EmailField(max_length=200)
     Degree = models.CharField(max_length=200)
-    Website = models.CharField(max_length=200,blank=True)
     Age=models.IntegerField(default=0)
     myDiscription = models.TextField()
     
