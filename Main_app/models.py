@@ -55,9 +55,6 @@ class Language(models.Model):
 class ResumeAbout(models.Model):
     Name = models.CharField(max_length=200, blank=True)
     Post = models.CharField(max_length=200)
-    Phone = models.CharField(max_length=200, blank=True)
-    Email = models.EmailField(max_length=200, blank=True)
-    Location = models.CharField(max_length=200, blank=True)
     Summary = models.TextField()
     Language = models.ManyToManyField(Language, blank=True)
 

@@ -32,14 +32,14 @@ def home(request):
 
 
     about=About.objects.all()
-    mycontact=Mycontact.objects.all()
+    
     
     resume_about=ResumeAbout.objects.first()
     skills=Skills.objects.all()
     edu=ResumeEducation.objects.all()
     techskill=ResumeTechnical.objects.all()
     softskill=ResumeSoft.objects.all()
-    lists={'about':about,'myc':mycontact,'res':resume_about,
+    lists={'about':about,'res':resume_about,
             'skills':skills,'edu':edu,'tsk':techskill,'ssk':softskill}
 
     return render(request,'index.html',lists)
