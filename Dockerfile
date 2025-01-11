@@ -18,11 +18,11 @@ ENV PATH="$VENV_PATH/bin:$PATH"
 RUN pip install --upgrade pip && pip install --no-cache-dir -r requirements.txt
 
 
+RUN python manage.py collectstatic --no-input
 # Expose the application port
 EXPOSE 8000
 
 # Collect static files
-RUN python manage.py collectstatic --no-input
 
 # Run the application
 CMD ["gunicorn", "Portfolio_website.wsgi:application", "--bind", "0.0.0.0:8080"]
