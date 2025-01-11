@@ -20,7 +20,7 @@ RUN pip install --upgrade pip && pip install --no-cache-dir -r requirements.txt
 
 RUN python manage.py collectstatic --no-input
 # Expose the application port
-EXPOSE 8000
+EXPOSE 8080
 
 # Collect static files
 
