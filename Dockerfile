@@ -25,4 +25,4 @@ EXPOSE 8000
 RUN python manage.py collectstatic --no-input
 
 # Run the application
-CMD ["gunicorn", "Portfolio_website.wsgi:application", "--bind", "0.0.0.0:$PORT"]
+CMD ["gunicorn", "Portfolio_website.wsgi:application", "--bind", "0.0.0.0:8080"]
