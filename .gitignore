@@ -8,7 +8,7 @@ env/
 venv/
 portEnv/
 .portEnv/
-*.env
+
 
 # Django stuff
 db.sqlite3
