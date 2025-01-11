@@ -20,3 +20,6 @@ python manage.py makemigrations
 
 # Apply any outstanding database migrations
 python manage.py migrate
+
+
+gunicorn Portfolio_website.wsgi --log-file -
