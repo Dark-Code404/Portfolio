@@ -3,14 +3,13 @@ from django.db import models
 from django.db import models
 
 class About(models.Model):
-    Name = models.CharField(max_length=200)
+    Name = models.CharField(max_length=200,db_index=True)
     Title = models.CharField(max_length=200)
     Birthdate = models.DateField(auto_now=False, auto_now_add=False)
     Phone = models.CharField(max_length=200)
     Address = models.CharField(max_length=200)
     Email = models.EmailField(max_length=200)
     Degree = models.CharField(max_length=200)
-    Website = models.CharField(max_length=200,blank=True)
     Age=models.IntegerField(default=0)
     myDiscription = models.TextField()
     
@@ -56,9 +55,6 @@ class Language(models.Model):
 class ResumeAbout(models.Model):
     Name = models.CharField(max_length=200, blank=True)
     Post = models.CharField(max_length=200)
-    Phone = models.CharField(max_length=200, blank=True)
-    Email = models.EmailField(max_length=200, blank=True)
-    Location = models.CharField(max_length=200, blank=True)
     Summary = models.TextField()
     Language = models.ManyToManyField(Language, blank=True)
 

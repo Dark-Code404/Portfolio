@@ -1,3 +1,47 @@
-portEnv/
+# Byte-compiled / optimized / DLL files
 __pycache__/
-*.pyc
+*.py[cod]
+*$py.class
+
+# Virtual environment
+env/
+venv/
+portEnv/
+.portEnv/
+*.env
+
+# Django stuff
+db.sqlite3
+*.log
+
+# Static and media files
+/static/
+/staticfiles/
+
+# Backup and compiled files
+*.bak
+*.swp
+*.swo
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Secret configuration
+.env
+
+# Node modules (if applicable)
+node_modules/
+
+
+# Generated migrations
+Main_app/migrations/*.py
+!Main_app/migrations/__init__.py
+
+# Editor-specific files
+.idea/
+.vscode/
+
+railway_data.json
+
+db.sqlite3
