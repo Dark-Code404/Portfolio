@@ -93,7 +93,7 @@ DATABASES = {
         # 'PASSWORD': 'Yunish@2059',
         # 'HOST': '127.0.0.1',
         # 'PORT':'3306',
-        dj_database_url.parse(os.getenv("DATABASE_URL"))
+        dj_database_url.parse(os.getenv("DATABASE_URL"),conn_max_age=600)
     
 }
 
@@ -147,6 +147,7 @@ STATICFILES_DIRS = [
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+ 
 
 
 # Default primary key field type

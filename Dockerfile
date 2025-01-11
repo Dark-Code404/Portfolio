@@ -10,21 +10,19 @@ WORKDIR /app
 # Copy project files
 COPY . /app/
 
-# Install system dependencies
-RUN apt-get update && apt-get install -y \
-    && rm -rf /var/lib/apt/lists/*
-
-# Create virtual environment
+# Create and activate virtual environment
 RUN python -m venv $VENV_PATH
 ENV PATH="$VENV_PATH/bin:$PATH"
 
 # Upgrade pip and install dependencies
-RUN pip install --upgrade pip && pip install -r requirements.txt
+RUN pip install --upgrade pip && pip install --no-cache-dir -r requirements.txt
+
 
 # Expose the application port
 EXPOSE 8000
 
 # Collect static files
+RUN python manage.py collectstatic --no-input
 
 # Run the application
-CMD ["gunicorn", "Portfolio_website.wsgi:application", "--bind", "127.0.0.1:8000"]
+CMD ["gunicorn", "Portfolio_website.wsgi:application", "--bind", "0.0.0.0:$PORT"]

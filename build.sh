@@ -1,12 +1,10 @@
 
 set -o errexit
 
-set -e  # Exit on any error
+ 
 
 # Set up a virtual environment
-python3 -m venv /opt/venv
-source /opt/venv/bin/activate
-
+ 
 # Upgrade pip
 pip install --upgrade pip
 
@@ -22,4 +20,4 @@ python manage.py makemigrations
 python manage.py migrate
 
 
-gunicorn Portfolio_website.wsgi --log-file -
+ 
