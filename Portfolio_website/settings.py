@@ -25,7 +25,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.getenv("SECRET_KEY")
+SECRET_KEY = "django-insecure-v&5%=g=lp1-u1#3z2_xrpq-+-ylw5a&@*&#cgdhum-1u4a@o2x"
  
 
 # SECURITY WARNING: don't run with debug turned on in production!
@@ -93,7 +93,7 @@ DATABASES = {
         # 'PASSWORD': 'Yunish@2059',
         # 'HOST': '127.0.0.1',
         # 'PORT':'3306',
-        dj_database_url.parse(os.getenv("DATABASE_URL"),conn_max_age=600)
+        dj_database_url.parse(os.getenv("postgresql://postgres:fOnzxeYvBnsjixPFLaJiPkRNYAlPxHrr@postgres.railway.internal:5432/railway"),conn_max_age=600)
     
 }
 
