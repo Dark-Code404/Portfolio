@@ -1,18 +1,28 @@
-FROM python:3.9-slim
+FROM python:3.10
 
 # Set environment variables
-ENV VIRTUAL_ENV=/opt/venv
-RUN python3 -m venv $VIRTUAL_ENV
-ENV PATH="$VIRTUAL_ENV/bin:$PATH"
+ENV PYTHONUNBUFFERED=1
+ENV VENV_PATH=/opt/venv
 
-# Install dependencies
-COPY requirements.txt .
-RUN pip install --no-cache-dir -r requirements.txt
+# Set working directory
+WORKDIR /app
 
 # Copy project files
-COPY . /app
+COPY . /app/
 
-WORKDIR /app
+# Install system dependencies
+RUN apt-get update && apt-get install -y \
+    && rm -rf /var/lib/apt/lists/*
+
+# Create virtual environment
+RUN python -m venv $VENV_PATH
+ENV PATH="$VENV_PATH/bin:$PATH"
+
+# Upgrade pip and install dependencies
+RUN pip install --upgrade pip && pip install -r requirements.txt
+
+# Expose the application port
+EXPOSE 8000
 
 # Collect static files
 
