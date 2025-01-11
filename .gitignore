@@ -28,7 +28,6 @@ db.sqlite3
 Thumbs.db
 
 # Secret configuration
-.env
 
 # Node modules (if applicable)
 node_modules/
