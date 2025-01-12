@@ -13,7 +13,7 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 import os
 from pathlib import Path
 from dotenv import load_dotenv
-import dj_database_url
+from decouple import config
 
 load_dotenv()
 
@@ -25,7 +25,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = config('SECRET_KEY')
+SECRET_KEY = "zt!pyj29@i*6-$eixsd&i@_b_=9$j1pq#zlpw+=9@&g9sb1476"
 
 DEBUG = config('DEBUG', default=False, cast=bool)
  
@@ -83,7 +83,6 @@ WSGI_APPLICATION = 'Portfolio_website.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
-from decouple import config
 
 DATABASES = {
     'default': {
