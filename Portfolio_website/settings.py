@@ -25,11 +25,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "django-insecure-v&5%=g=lp1-u1#3z2_xrpq-+-ylw5a&@*&#cgdhum-1u4a@o2x"
- 
+SECRET_KEY = config('SECRET_KEY')
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = config('DEBUG', default=False, cast=bool)
  
 
 ALLOWED_HOSTS =["*"]
@@ -85,12 +83,19 @@ WSGI_APPLICATION = 'Portfolio_website.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
+from decouple import config
+
 DATABASES = {
-    'default': 
-      
-        dj_database_url.parse(("postgresql://postgres:fOnzxeYvBnsjixPFLaJiPkRNYAlPxHrr@postgres.railway.internal:5432/railway"),conn_max_age=600)
-    
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': config('DATABASE_NAME'),
+        'USER': config('DATABASE_USER'),
+        'PASSWORD': config('DATABASE_PASSWORD'),
+        'HOST': config('DATABASE_HOST'),
+        'PORT': config('DATABASE_PORT'),
+    }
 }
+
 
 
 
@@ -139,7 +144,7 @@ STATICFILES_DIRS = [
 ]
 
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles/')
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
  
