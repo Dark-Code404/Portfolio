@@ -87,13 +87,8 @@ WSGI_APPLICATION = 'Portfolio_website.wsgi.application'
 
 DATABASES = {
     'default': 
-        # 'ENGINE': 'django.db.backends.mysql',
-        # 'NAME': 'Django',
-        # 'USER': 'root',
-        # 'PASSWORD': 'Yunish@2059',
-        # 'HOST': '127.0.0.1',
-        # 'PORT':'3306',
-        dj_database_url.parse(os.getenv("postgresql://postgres:fOnzxeYvBnsjixPFLaJiPkRNYAlPxHrr@postgres.railway.internal:5432/railway"),conn_max_age=600)
+      
+        dj_database_url.parse(("postgresql://postgres:fOnzxeYvBnsjixPFLaJiPkRNYAlPxHrr@postgres.railway.internal:5432/railway"),conn_max_age=600)
     
 }
 
@@ -144,7 +139,7 @@ STATICFILES_DIRS = [
 ]
 
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles/')
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
  
