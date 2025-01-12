@@ -1,6 +1,6 @@
 {% extends "base.html" %}
- {% load static %} 
- {% block main %}
+{% load static %}
+{% block main %}
 
 <main id="main">
   <section id="about" class="about">
@@ -69,15 +69,10 @@
     </div>
   </section>
 
-
-
-
-
   <section id="skills" class="skills section-bg">
     <div class="container">
       <div class="section-title">
         <h2>Skills</h2>
-
       </div>
 
       <div class="row skills-content">
@@ -106,7 +101,6 @@
             </div>
           </div>
 
-
           <div class="progress">
             <span class="skill">My SQL <i class="val">70%</i></span>
             <div class="progress-bar-wrap">
@@ -114,8 +108,6 @@
               </div>
             </div>
           </div>
-
-
         </div>
 
         <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
@@ -150,138 +142,90 @@
               </div>
             </div>
           </div>
-
-
         </div>
       </div>
     </div>
   </section>
 
-
-
   <section id="resume" class="resume">
     <div class="container">
       <div class="section-title">
         <h2>Resume</h2>
-
       </div>
 
       <div class="row">
         <div class="col-lg" data-aos="fade-up">
           <h3 class="resume-title">Sumary</h3>
           <div class="resume-item pb-0">
-
-
-
-
             <h4>{{res.Name}}</h4>
             <h5>{{res.Post}}</h5>
             <p>
               <em style="font-size: 17px;">{{res.Summary}}</em>
             </p>
             <p>
-
               <strong>Phone :</strong>
               <span>{{res.Phone}}</span>
             </p>
             <p>
-
               <strong>Email :</strong>
               <span>{{res.Email}}</span>
             </p>
-
             <p>
-
               <strong>Location :</strong>
               <span>{{res.Location}}</span>
             </p>
-
-
-
-
-
           </div><br>
           <div class="resume-item">
             <h4 class="resume-title">Technical Skills</h4>
             <ul>
-
-              {%for tsk in tsk%}
+              {% for tsk in tsk %}
               <li><strong>{{tsk.Name}}</strong> : {{tsk.Description}}</li>
-              {%endfor%}
+              {% endfor %}
             </ul>
           </div><br>
           <div class="resume-item">
             <h4 class="resume-title">Soft Skills</h4>
             <ul>
-
-              {%for ssk in ssk%}
+              {% for ssk in ssk %}
               <li><strong>{{ssk.Name}}</strong> </li>
-              {%endfor%}
+              {% endfor %}
             </ul>
           </div>
         </div>
 
-
-
-
-
-      </div>
-      <div class="col-lg" data-aos="fade-up" data-aos-delay="100">
-
-        <h3 class="resume-title">Education</h3>
-        <div class="resume-item">
-          {%for edu in edu%}
-          <h4>{{edu.Course}}</h4>
-          <h5>{{edu.Startdate}} - {{edu.Enddate}}</h5>
-          <p><em style="font-size: 18px;">College : {{edu.College}}<br> Location : {{edu.Location}}</em></p>
-
-          {%endfor%}
-        </div><br>
-        <h3 class="resume-title">Skills</h3>
-        <div class="resume-item">
-          <ul>
-            {%for skills in skills%}
-            <li>{{skills.skill}}</li>
-            {%endfor%}
-          </ul>
-        </div><br>
-
-        <h3 class="resume-title">Language</h3>
-        <div class="resume-item">
-          <ul>
-            {%for lang in res.Language.all %}
-            <li>{{lang.name}}</li>
-            {%endfor%}
-
-          </ul>
+        <div class="col-lg" data-aos="fade-up" data-aos-delay="100">
+          <h3 class="resume-title">Education</h3>
+          <div class="resume-item">
+            {% for edu in edu %}
+            <h4>{{edu.Course}}</h4>
+            <h5>{{edu.Startdate}} - {{edu.Enddate}}</h5>
+            <p><em style="font-size: 18px;">College : {{edu.College}}<br> Location : {{edu.Location}}</em></p>
+            {% endfor %}
+          </div><br>
+          <h3 class="resume-title">Skills</h3>
+          <div class="resume-item">
+            <ul>
+              {% for skills in skills %}
+              <li>{{skills.skill}}</li>
+              {% endfor %}
+            </ul>
+          </div><br>
+          <h3 class="resume-title">Language</h3>
+          <div class="resume-item">
+            <ul>
+              {% for lang in res.Language.all %}
+              <li>{{lang.name}}</li>
+              {% endfor %}
+            </ul>
+          </div>
+          <h3 class="resume-title">My CV</h3>
+          <div class="resume-item">
+            <button class="btn btn-outline-success btn-lg ">
+              <a href="{% static "assets/resumes/Yunish-Luitel-updated-cv.pdf" %}#toolbar=0&navpanes=0&scrollbar=0" target="_blank">View CV</a>
+            </button>
+          </div>
         </div>
-       
-
-
-        <h3 class="resume-title">My CV</h3>
-        <div class="resume-item">
-          <button class="btn btn-outline-success btn-lg ">
-
-
-            <a href="{% static "assets/resumes/Yunish-Luitel-updated-cv.pdf" %}#toolbar=0&navpanes=0&scrollbar=0" target="_blank">View CV</a>
-          </button>
-        </div>
-
-        <script>
-          var resumeLink = document.getElementById('resume-link');
-          resumeLink.href = resumeLink.href + '#toolbar=0';
-        </script>
-
-
-
-
-
-
-
-
-
       </div>
-    </div>
     </div>
   </section>
 
@@ -295,8 +239,6 @@
       </div>
 
       <div class="row" data-aos="fade-in">
-        
-
         <div class="col-lg-8 offset-lg-2 mt-5 mt-lg-0 d-flex align-items-stretch">
           <form action="{% url 'home' %}" method="post" class="php-email-form">
             {% csrf_token %}
@@ -332,14 +274,9 @@
           <div id="successMessage" class="alert alert-success" style="display: none;">
             Thanks for contacting us!
           </div>
-
         </div>
-
       </div>
     </div>
   </section>
-
-
-
 </main>
 {% endblock main %}
