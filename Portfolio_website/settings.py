@@ -141,5 +141,15 @@ LOGGING = {
     },
 }
 
+
+
+CSRF_COOKIE_SECURE = True
+CSRF_COOKIE_HTTPONLY = True
+CSRF_COOKIE_SAMESITE = 'Lax'
+
+# Security settings
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+SECURE_SSL_REDIRECT = True
+
 # Print the port for debugging
 print(f"Listening on port: {os.getenv('PORT')}")
