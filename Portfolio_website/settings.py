@@ -12,20 +12,20 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 
 import os
 from pathlib import Path
-from dotenv import load_dotenv
+ 
 from decouple import config
 
-load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+ 
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "zt!pyj29@i*6-$eixsd&i@_b_=9$j1pq#zlpw+=9@&g9sb1476"
+
+SECRET_KEY = '&fj#uki&r6h(*_3)cj=g#@@3l2jw^ay@a4m&bs3bu#9!gorq5#'
 
 DEBUG = config('DEBUG', default=False, cast=bool)
  
